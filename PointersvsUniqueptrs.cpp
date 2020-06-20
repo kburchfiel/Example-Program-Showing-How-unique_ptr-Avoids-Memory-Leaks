@@ -11,8 +11,8 @@ using namespace std;
 
 void newcharsusinguniqueptr()
 {
-    unique_ptr<char> ucp{new char[1]};
-    // ucp.release(); //If ucp.release() is added, newcharsusinguniqueptr will indeed leak memory just like newcharsusingptr.
+    unique_ptr<char> ucp = make_unique<char>(1); // Another way to express this would be unique_ptr<char> ucp{new char[1]};
+    //ucp.release(); //If ucp.release() is added, newcharsusinguniqueptr will indeed leak memory just like newcharsusingptr.
 }
 
 void newcharsusingptr()
